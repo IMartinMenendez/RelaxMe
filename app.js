@@ -24,5 +24,7 @@
 $(function() {
     $('body').click(function() {
         $(this).css('background-image', 'url(https://cdn.pixabay.com/photo/2020/03/03/20/31/boat-4899802_1280.jpg)');
+        const rollSound = new Audio("./Sound/Music.wav");
+        $('button').click(e => rollSound.play());
     });
 });
