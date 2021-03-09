@@ -1,25 +1,33 @@
-    //
-    //     const backgroundImg = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyB57zuc4bms-hDtWMa-4BZvscIlJDm4r7a9WLaO4SAxUvKM-DDA",
-    //         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBinSpWOvAtkxjmkf709O3rjH2ObRbWAEn9s0JcWaeL6LMtCbOrQ",
-    //         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKY4J2qIFqkuDnABMzeypywbMSZL1cleS8vpySz0KD02wOYORU1g",
-    //         "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRQkdQT0zN0xDVP-VuvwojSbS5dOstX14eZvJCOWNPxKJ5dWTIc"
-    //     ]
-    //
-    //     setInterval(changeImage, 5000);
-    //
-    //     function changeImage() {
-    //         var i = Math.floor((Math.random() * (backgroundImg.length - 1)));
-    //
-    // }});
 
-$(function() {
-    $('button').click(function() {
-        $("body").css('background-image', 'url(https://cdn.pixabay.com/photo/2020/03/03/20/31/boat-4899802_1280.jpg)');
-        const rollSound = new Audio("./Sound/Music.wav");
-        $('button').click(e => rollSound.play());
+
+var bgImageArray = ["lonely.jpg", "uluwatu.jpg", "carezza-lake.jpg", "batu-bolong-temple.jpg"],
+    base = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/full-",
+    secs = 4;
+bgImageArray.forEach(function(img){
+    new Image().src = base + img;
+    // caches images, avoiding white flash between background replacements
+});
+
+$(function () {
+    const rollSound = new Audio("./Sound/Music.wav");
+    $('button').click(function () {
+        rollSound.play();
+        function backgroundSequence() {
+            window.clearTimeout();
+            var k = 0;
+            for (i = 0; i < bgImageArray.length; i++) {
+                setTimeout(function(){
+                    document.body.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
+                    document.body.style.backgroundSize ="cover";
+                    if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }
+                }, (secs * 1000) * i)
+            }
+        }
+        backgroundSequence();
+
+
     });
 });
 
 // Navbar
-
 
