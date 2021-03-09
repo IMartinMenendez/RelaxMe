@@ -8,8 +8,12 @@ bgImageArray.forEach(function (img) {
     // caches images, avoiding white flash between background replacements
 });
 
+const soundNature = new Audio("./Sound/Nature.wav");
+const soundBirds = new Audio("./Sound/Birds.wav");
+const soundRiver = new Audio("./Sound/River.wav");
+const rollSound = new Audio("./Sound/Music.wav");
+
 $(function () {
-    const rollSound = new Audio("./Sound/Music.wav");
     $('button').click(function () {
         rollSound.play();
 
@@ -33,8 +37,31 @@ $(function () {
 
         backgroundSequence();
 
-
     });
+
+
+
+$(".Nature").click(function (){
+    rollSound.pause();
+    soundBirds.pause();
+    soundRiver.pause();
+    soundNature.play();
+    }
+)
+$(".Birds").click(function (){
+    rollSound.pause();
+    soundNature.pause();
+    soundRiver.pause();
+    soundBirds.play();
+    }
+)
+$(".River").click(function (){
+    rollSound.pause();
+    soundNature.pause();
+    soundBirds.pause();
+    soundRiver.play();
+    }
+)
 });
 
 // Navbar
@@ -45,3 +72,6 @@ $(".nav-link").click(function () {
         $(".dropdown-menu").slideUp("Slow")
     })
 });
+
+// timer
+
