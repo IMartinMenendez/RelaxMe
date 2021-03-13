@@ -1,24 +1,109 @@
-body{
+body {
     background-image: url("https://cdn.pixabay.com/photo/2021/02/19/08/58/mountains-6029596_1280.jpg");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    transition: 5s;
+    text-align: center;
+
 }
 
-h1{
+footer {
+    background-color: #defcf9;
+}
+
+h1 {
     color: white;
     padding-left: 20px;
-}
-.btn{
-    margin-left:20px;
-}
-.card{
-    margin: 5px;
-    margin-top: 300px;
-    margin-right: 15px;
-    text-align: center;
-    opacity: 60%;
+    font-family: Raleway, sans-serif, extra-bold;
 
 }
+p{
+    color: white;
+    font-size: 20px;
+    font-family: Raleway, sans-serif, extra-bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    margin-right: 20rem;
+    font-size: 20px;
+    font-family: Raleway, sans-serif, extra-bold;
+}
+
+.btn {
+    margin-left: 20px;
+    border-radius: 40px;
+    transition: all 0.3s ease 0s;
+    font-size: 25px;
+
+}
+
+.card {
+    margin-right: 20px;
+    text-align: center;
+    opacity: 60%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.roll {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 90px;
+    font-family: Raleway, sans-serif, extra-bold;
+    visibility: hidden;
+
+}
+.position-item{
+    justify-content: flex-end;
+}
+
+.nav-link {
+    color: white;
+}
+
+.imageLogo{
+    margin-top: 15%;
+    width: 150px;
+    margin-left: 10px;
+}
+
+.logo{
+    margin-bottom: 10px;
+}
+
+/*footer*/
+#footer {
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    opacity: 60%;
+    bottom: 0;
+    width: 100%;
+    height: 7%;  /* Footer height */
+}
+.footerP{
+    color: black;
+    font-size:  15px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+.icon-footer{
+    width: 1%;
+    margin-left: 7px;
+}
+/* Resize text on mobile */
+
+@media screen and (max-width: 640px) { #block-yui_3_17_2_1_1581506136944_9324 {
+
+    height: 2%;
+
+}}
