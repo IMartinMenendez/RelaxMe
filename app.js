@@ -19,23 +19,33 @@ $(function () {
     const soundRiver = new Audio("./Sound/River.wav");
     const rollSound = new Audio("./Sound/Music.wav");
 
-    function backgroundSequence() {
-        window.clearTimeout();
-        var k = 0;
-        for (i = 0; i < bgImageArray.length; i++) {
-            setTimeout(function () {
-                document.body.style.background = "url(" + base + bgImageArray[k] + ") no-repeat";
-                document.body.style.backgroundSize = "cover";
-                if ((k + 1) === bgImageArray.length) {
-                    setTimeout(function () {
-                        backgroundSequence()
-                    }, (secs * 1000));
-                } else {
-                    k++;
-                }
-            }, (secs * 5000) * i);
-        }
+    // function backgroundSequence() {
+    //     window.clearTimeout();
+    //     var k = 0;
+    //     for (i = 0; i < bgImageArray.length; i++) {
+    //         setTimeout(function () {
+    //             document.body.style.background = "url(" + base + bgImageArray[k] + ") no-repeat";
+    //             document.body.style.backgroundSize = "cover";
+    //             if ((k + 1) === bgImageArray.length) {
+    //                 setTimeout(function () {
+    //                     backgroundSequence()
+    //                 }, (secs * 1000));
+    //             } else {
+    //                 k++;
+    //             }
+    //         }, (secs * 5000) * i);
+    //     }
+    // }
+
+    var i = 0;
+
+    function backgroundSequence(){
+    window.setInterval(function () {
+    $("body").css("backgroundSize", "cover").css("background","url(" + base + bgImageArray[i] + ") no-repeat")
+    var i = +1
+    }, 4000)
     }
+
 
     var interval;
 
@@ -61,6 +71,8 @@ $(function () {
         clearInterval(interval);
         $(".title").text("Well done!");
         $(".animation").animate({marginRight: "0"}, 2000);
+        $(".stop").css("display", "none");
+        $(".start").css("display", "inline");
         rollSound.pause();
         soundBirds.pause();
         soundRiver.pause();
@@ -72,46 +84,50 @@ $(function () {
         $(".card").animate({opacity: 1}, 2000);
     }
 
+    function resetCountdown() {
+        $('.minutes').text('10')
+        $(".seconds").text('00');
+
+    }
+
     $(".start").click(function () {
         rollSound.play();
         backgroundSequence();
+        resetCountdown();
         timer();
         $(".title").text("Your time left.").animate({left: '250px'});
-        $("p").hide().fadeOut('slow');
+        $(".description").hide().fadeOut('slow');
         animationToTheLeft();
-        $("button").text("Stop").removeClass("start").off('click').addClass("stop");
-        $(".stop").click(finish);
+        $(".start").css("display", "none");
+        $(".stop").css("display", "inline").click(finish);
     });
+
+    $(".nature").click(function () {
+            console.log("Nature");
+            rollSound.pause();
+            soundBirds.pause();
+            soundRiver.pause();
+            soundNature.play();
+        }
+    )
+    $(".birds").click(function () {
+            rollSound.pause();
+            soundNature.pause();
+            soundRiver.pause();
+            soundBirds.play();
+        }
+    )
+    $(".river").click(function () {
+            rollSound.pause();
+            soundNature.pause();
+            soundBirds.pause();
+            soundRiver.play();
+        }
+    );
+
+
 });
 
-$(".Nature").click(function () {
-        rollSound.pause();
-        soundBirds.pause();
-        soundRiver.pause();
-        soundNature.play();
-    }
-)
-$(".Birds").click(function () {
-        rollSound.pause();
-        soundNature.pause();
-        soundRiver.pause();
-        soundBirds.play();
-    }
-)
-$(".River").click(function () {
-        rollSound.pause();
-        soundNature.pause();
-        soundBirds.pause();
-        soundRiver.play();
-    }
-);
 
-// Navbar
 
-$(".nav-link").click(function () {
-    $(".dropdown-menu").slideDown("slow")
-    $(".nav-link").click(function () {
-        $(".dropdown-menu").slideUp("Slow")
-    })
-});
 
