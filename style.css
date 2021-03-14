@@ -5,7 +5,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    transition: 5s;
+    transition: 3s;
     text-align: center;
     background-attachment: fixed;
 }
@@ -20,17 +20,24 @@ h1 {
     font-family: Raleway, sans-serif, extra-bold;
 
 }
-p{
+
+p {
     color: white;
     font-size: 20px;
     font-family: Raleway, sans-serif, extra-bold;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link { /*to change the boostrap color*/
     color: white;
     margin-right: 20rem;
     font-size: 20px;
     font-family: Raleway, sans-serif, extra-bold;
+}
+
+.navText:hover {
+    background-color: white;
+    opacity: 60%;
+
 }
 
 .btn {
@@ -54,7 +61,8 @@ p{
     align-items: center;
     justify-content: center;
 }
-.stop{
+
+.stop {
     display: none;
 }
 
@@ -65,7 +73,8 @@ p{
     visibility: hidden;
 
 }
-.position-item{
+
+.position-item {
     justify-content: flex-end;
 }
 
@@ -73,13 +82,14 @@ p{
     color: white;
 }
 
-.imageLogo{
+.imageLogo {
     margin-top: 15%;
     width: 150px;
     margin-left: 10px;
 }
 
-.logo{
+
+.logo {
     margin-bottom: 10px;
 }
 
@@ -91,16 +101,21 @@ p{
     opacity: 60%;
     bottom: 0;
     width: 100%;
-    height: 75px;  /* Footer height */
+    height: 75px; /* Footer height */
 }
-.footerP{
+
+.footerP {
     color: black;
-    font-size:  15px;
+    font-size: 15px;
     margin-top: 10px;
     margin-bottom: 3px;
 }
-.icon-footer{
+
+.icon-footer {
     width: 1%;
-    margin-left: 7px;
+    margin-left: 15px;
 }
-/* Resize text on mobile */
+
+.icon-footer:hover {
+    background-color: #dddddd;
+}
