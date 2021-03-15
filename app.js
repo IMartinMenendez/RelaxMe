@@ -29,7 +29,7 @@ $(function () {
             const imageNext = base + bgImageArray[randomNumber];
             $("body")
                 .css("background", "url(" + imageNext + ") no-repeat")
-                .css("backgroundSize", "cover").css("transition-duration", "5s").css("background-attachment" , "fixed");
+                .css("backgroundSize", "cover").css("transition-duration", "5s").css("background-attachment", "fixed");
         }, 10000);
     }
 
@@ -69,9 +69,15 @@ $(function () {
     }
 
     function animationToTheLeft() {
-        $(".animation").animate({marginRight: "70%"}, 2000);
-        $(".card").animate({opacity: 1}, 2000);
+
+        if (screen.width > 1000) {
+            $(".animation").animate({marginRight: "70%"}, 2000);
+            $(".card").animate({opacity: 1}, 2000);
+        } else if (screen.width < 1000) {
+
+        }
     }
+
 
     function resetCountdown() {
         $('.minutes').text('10')

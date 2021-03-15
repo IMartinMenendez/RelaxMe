@@ -10,10 +10,6 @@ body {
     background-attachment: fixed;
 }
 
-footer {
-    background-color: #defcf9;
-}
-
 h1 {
     color: white;
     padding-left: 20px;
@@ -104,7 +100,7 @@ p {
     height: 75px; /* Footer height */
 }
 
-.footerP {
+#footer p {
     color: black;
     font-size: 15px;
     margin-top: 10px;
@@ -113,9 +109,79 @@ p {
 
 .icon-footer {
     width: 1%;
+
+}
+.icon-second{
     margin-left: 15px;
 }
 
 .icon-footer:hover {
     background-color: #dddddd;
+}
+
+@media (max-width: 1000px) {
+    footer {
+        height: 55px !important;
+        bottom: 0 !important;
+    }
+
+    #footer p {
+        color: black;
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: 3px;
+    }
+    .imageLogo {
+        margin-top: 10%;
+        margin-bottom: 2%;
+        width: 20%;
+        margin-left: 0px;
+    }
+
+    .logo {
+        padding-left: 0px;
+    }
+
+    .row {
+        margin-left: 0% !important;
+    }
+
+    .card {
+        text-align: center;
+        opacity: 60%;
+        margin-bottom: 10px;
+        align-items: center;
+        width: 5rem !important;
+    }
+
+
+    p {
+        color: white;
+        font-size: 12px;
+        font-family: Raleway, sans-serif, extra-bold;
+    }
+
+    .btn {
+        margin-left: 0%;
+        margin-bottom: 15px !important;
+        border-radius: 50px;
+        transition: all 0.3s ease 0s;
+        font-size: 70%;
+    }
+
+    h1 {
+        color: white;
+        padding-left: 15px;
+        font-family: Raleway, sans-serif, extra-bold;
+
+    }
+
+    .animationStart {
+        transform: scale(0.3, 0.3);
+    }
+    .icon-footer {
+        width: 15px;
+        margin-left: 15px;
+    }
+
 }
